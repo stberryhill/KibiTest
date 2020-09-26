@@ -7,6 +7,7 @@
 #define _KIBITEST_H
 
 #include <stdio.h>
+#include <stdlib.h>
 
 int _kibi_currentTestHasFailures; /* Do not modify externally */
 
@@ -16,6 +17,7 @@ int _kibi_currentTestHasFailures; /* Do not modify externally */
   function();\
   if (_kibi_currentTestHasFailures) {\
     printf("...FAILED.\n\n");\
+    exit(EXIT_FAILURE);\
   } else {\
     printf("... PASSED.\n\n");\
   }} while (0)
