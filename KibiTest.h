@@ -11,7 +11,7 @@
 
 int _kibi_currentTestHasFailures; /* Do not modify externally */
 
-#define Kibi_Test(function) do {\
+#define Kibi_Test(function) ({\
   _kibi_currentTestHasFailures = 0;\
   printf("%s:\n", #function);\
   function();\
@@ -20,18 +20,21 @@ int _kibi_currentTestHasFailures; /* Do not modify externally */
     exit(EXIT_FAILURE);\
   } else {\
     printf("... PASSED.\n\n");\
-  }} while (0)
+  }\
+})
 
-#define Kibi_AssertTrue(condition) do {\
-    if (!(condition)) {\
-      _kibi_currentTestHasFailures = 1;\
-      printf("\tError @ %s:%d\texpected true but was false\n", __FILE__, __LINE__);\
-    }} while (0)
+#define Kibi_AssertTrue(condition) ({\
+  if (!(condition)) {\
+    _kibi_currentTestHasFailures = 1;\
+    printf("\tError @ %s:%d\texpected true but was false\n", __FILE__, __LINE__);\
+  }\
+})
 
-#define Kibi_AssertFalse(condition) do {\
-    if (condition) {\
-      _kibi_currentTestHasFailures = 1;\
-      printf("\tError @ %s:%d\texpected false but was true\n", __FILE__, __LINE__);\
-    }} while (0)
+#define Kibi_AssertFalse(condition) ({\
+  if (condition) {\
+    _kibi_currentTestHasFailures = 1;\
+    printf("\tError @ %s:%d\texpected false but was true\n", __FILE__, __LINE__);\
+  }\
+})
 
 #endif
