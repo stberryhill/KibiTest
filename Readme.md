@@ -3,9 +3,9 @@
 
 ![logo](https://github.com/stberryhill/KibiTest/blob/master/Media/Kibi_Logo.png)
 
-* There are three main functions: **Kibi_Test**, **Kibi_AssertTrue**, and **Kibi_AssertFalse**. You can optionally specify setup/teardown functions to be called before and after each test with **Kibi_ForEach**.
-* Simply pass the desired test function into Kibi_Test (it must have no parameters).
-* Just include the header file and you're good to go, no linking necessary.
+* There are three main functions: **Kibi_Test**, **Kibi_AssertTrue**, and **Kibi_AssertFalse**. Optionally specify setup/teardown functions to be called before and after each test with **Kibi_ForEach**.
+* Pass the desired test function into Kibi_Test to run it (must have no parameters).
+* Simply include the header file - no linking necessary.
 
 ## Example
 ### Usage
