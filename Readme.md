@@ -14,7 +14,7 @@ KibiTest is designed to be the bare essentials - a no-fuss testing solution that
 
 * There are three main functions: **Kibi_Test**, **Kibi_AssertTrue**, and **Kibi_AssertFalse**. Optionally specify setup/teardown functions to be called before and after each test with **Kibi_ForEach**.
 * Pass the desired test function into **Kibi_Test** to run it (must have no parameters).
-* Simply include the header file - no linking necessary. If a test fails, the process exits with non-0 return code.
+* Simply include the header file - no linking necessary. If a test fails, the process exits with a non-0 return code.
   
 
 ## Examples
@@ -22,7 +22,7 @@ KibiTest is designed to be the bare essentials - a no-fuss testing solution that
 <a name="simple-example"></a>
 ### Simple Example
 
-Here is an example that covers the most common 3 functions one will need to use: **Kibi_Test**, **Kibi_AssertTrue**,  and **Kibi_AssertFalse**.
+Here is an example that covers the most common 3 functions one will need to use.
 
  #### Source
 
@@ -79,7 +79,7 @@ $
 <a name="complete-example"></a>
 ### Complete Example
 
-This final example includes usage of **Kibi_ForEach**, the fourth and final function in KibiTest. The *before* and *after* are called before and after every test. This is useful if you need to create a blank slate before each test and then clean it up after, for example.
+This example includes usage of **Kibi_ForEach**, the fourth and final function in KibiTest. This is useful if you need to create a blank slate before each test and then clean it up after, for example.
 
  #### Source
 
@@ -137,7 +137,7 @@ $
 <a name="automated-workflow"></a>
 ## Automated Workflow
 
-In general, if you're looking to use KibiTest in an automated workflow, you simply have to use the return value of the test process. Non-0 means failure.
+In general, if you're looking to use KibiTest in an automated workflow, you will use the return value of the test process. Non-0 means a test failed.
 
 ### Make
 
