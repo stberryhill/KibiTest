@@ -31,11 +31,11 @@ Here is an example that covers the most common 3 functions one will need to use.
 #include <stdbool.h>
 
 bool correctPrefixIsKibi(int numBytes) {
-  bool isKibi = numBytes == 1024 ? true : false;
+  return numBytes == 1024 ? true : false;
 }
 
 bool correctPrefixIsKilo(int numBytes) {
-  bool isKibi = numBytes == 1000 ? true : false;
+  return numBytes == 1000 ? true : false;
 }
 
 void KibiMeans1024() {
