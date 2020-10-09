@@ -1,19 +1,14 @@
-# <span style="font-size: 3em;"><span style="color:#6d89b1">Kibi</span><span style="color:#59586c">Test</span></span>
-
-<span style="color:gray">A minimal, single-header C89 testing framework in under a Kibibyte.</span>
+# KibiTest
+> A minimal, single-header C89 testing framework in under a Kibibyte.
 
 
 KibiTest is designed to be the bare essentials - a no-fuss testing solution that's self-explanatory. It was conceived as both a fun exercise in minimalism and as the testing solution for my upcoming terminal-manipulation library.
 
-[Summary](#summary)
-
-[Examples](#examples)
-
-​		[Simple Example](#simple example)
-
-​		[Complete Example](#Complete Example)
-
-[Automated Workflow](#automated workflow)
+* [Summary](#summary)
+* [Examples](#examples)
+	* [Simple Example](#simple-example)
+	* [Complete Example](#complete-example)
+* [Automated Workflow](#automated-workflow)
 
 ## Summary
 
@@ -24,7 +19,7 @@ KibiTest is designed to be the bare essentials - a no-fuss testing solution that
 
 ## Examples
 
-
+<a name="simple-example"></a>
 ### Simple Example
 
 Here is an example that covers the most common 3 functions one will need to use: **Kibi_Test**, **Kibi_AssertTrue**,  and **Kibi_AssertFalse**.
@@ -81,7 +76,7 @@ $
 ```
 
 
-
+<a name="complete-example"></a>
 ### Complete Example
 
 This final example includes usage of **Kibi_ForEach**, the fourth and final function in KibiTest. The *before* and *after* are called before and after every test. This is useful if you need to create a blank slate before each test and then clean it up after, for example.
@@ -139,7 +134,7 @@ $
 ```
 
 
-
+<a name="automated-workflow"></a>
 ## Automated Workflow
 
 In general, if you're looking to use KibiTest in an automated workflow, you simply have to use the return value of the test process. Non-0 means failure.
