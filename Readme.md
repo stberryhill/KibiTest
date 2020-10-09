@@ -4,11 +4,13 @@
 
 KibiTest is designed to be the bare essentials - a no-fuss testing solution that's self-explanatory. It was conceived as both a fun exercise in minimalism and as the testing solution for my upcoming terminal-manipulation library.
 
-* [Summary](#summary)
-* [Examples](#examples)
-	* [Simple Example](#simple-example)
-	* [Complete Example](#complete-example)
-* [Automated Workflow](#automated-workflow)
+- [KibiTest](#kibitest)
+  - [Summary](#summary)
+  - [Complete Example](#complete-example)
+      - [Source](#source)
+      - [Output](#output)
+  - [Automated Workflow](#automated-workflow)
+    - [Make](#make)
 
 ## Summary
 
@@ -17,69 +19,10 @@ KibiTest is designed to be the bare essentials - a no-fuss testing solution that
 * Simply include the header file - no linking necessary. If a test fails, the process exits with a non-0 return code.
   
 
-## Examples
-
-<a name="simple-example"></a>
-### Simple Example
-
-Here is an example that covers the most common 3 functions one will need to use.
-
- #### Source
-
-```c
-#include "KibiTest.h"
-#include <stdbool.h>
-
-bool correctPrefixIsKibi(int numBytes) {
-  return numBytes == 1024 ? true : false;
-}
-
-bool correctPrefixIsKilo(int numBytes) {
-  return numBytes == 1000 ? true : false;
-}
-
-void KibiMeans1024() {
-  const int numBytes = 1024;
-  Kibi_AssertTrue(correctPrefixIsKibi(numBytes));
-  Kibi_AssertFalse(correctPrefixIsKilo(numBytes));
-}
-
-void KiloMeans1000() {
-  const int numBytes = 1000;
-  Kibi_AssertTrue(correctPrefixIsKilo(numBytes));
-  Kibi_AssertFalse(correctPrefixIsKibi(numBytes));
-}
-
-int main() {
-
-  Kibi_Test(KibiMeans1024);
-  Kibi_Test(KiloMeans1000);
-
-  return 0;
-}
-```
-
-
-
-#### Output
-
-```sh
-$ gcc -std=c89 SimpleTest.c -o SimpleTest
-$ ./SimpleTest
-KibiMeans1024:
-... PASSED.
-
-KiloMeans1000:
-... PASSED.
-
-$ 
-```
-
-
 <a name="complete-example"></a>
-### Complete Example
+## Complete Example
 
-This example includes usage of **Kibi_ForEach**, the fourth and final function in KibiTest. This is useful if you need to create a blank slate before each test and then clean it up after, for example.
+This example uses all four functions of KibiTest.
 
  #### Source
 
@@ -88,7 +31,7 @@ This example includes usage of **Kibi_ForEach**, the fourth and final function i
 #include <string.h>
 
 struct Foo {
-  int a;
+  int number;
   char string[256];
 };
 
@@ -96,7 +39,7 @@ struct Foo *foo;
 
 void before() {
   foo = malloc(sizeof *foo);
-  foo->a = 0;
+  foo->number = 0;
   strcpy(foo->string, "Hello, World");
 }
 
@@ -105,30 +48,38 @@ void after() {
 }
 
 void fooIsCreatedCorrectly() {
-  Kibi_AssertTrue(foo != NULL);
-  Kibi_AssertTrue(foo-> a == 0);
+  Kibi_AssertFalse(foo == NULL);
+  Kibi_AssertTrue(foo->number == 0);
   Kibi_AssertTrue(strcmp(foo->string, "Hello, World") == 0);
 }
 
+void fooNumberEquals5() {
+  /* Fails since foo->number is 0 */
+  Kibi_AssertTrue(foo->number == 5);
+}
+
 int main() {
-  Kibi_ForEach(before, after); /* Completely optional  */
+  Kibi_ForEach(before, after);
 
   Kibi_Test(fooIsCreatedCorrectly);
+  Kibi_Test(fooNumberEquals5);
 
   return 0;
 }
 ```
 
 
-
-
 #### Output
 
 ```sh
-$ gcc -std=c89 CompleteTest.c -o CompleteTest
-$ ./CompleteTest
+$ gcc -std=c89 test.c -o test
+$ ./test
 fooIsCreatedCorrectly:
 ... PASSED.
+
+fooNumberEquals5:
+        Error - Assert true failed @ test.c:28
+...FAILED.
 
 $
 ```
