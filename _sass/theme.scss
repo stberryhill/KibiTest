@@ -16,16 +16,18 @@ div {
 }
 
 h1, h2, h3, h4 {
+  font-family: 'Raleway', sans-serif;
   color: #343447;
   margin-bottom: 0.25em;
 }
 
 p, ul, ol {
-  margin-bottom: 0.9em;
+  margin-bottom: 1em;
+  margin-left: 0.5em;
 }
 
-ul {
-  margin-left: 1em;
+ul, ol {
+  margin-left: 1.5em;
 }
 
 main {
@@ -37,6 +39,7 @@ main {
 
 .content-wrapper {
   background-color: #f8f8f8;
+  height: 100%;
 }
 
 footer {
