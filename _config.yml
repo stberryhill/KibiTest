@@ -29,11 +29,20 @@ url: "https://stberryhill.github.io" # the base hostname & protocol for your sit
 github_username:  stberryhill
 
 # Build settings
+# markdown: kramdown
 theme: null
 plugins:
   - jekyll-feed
 
 include: [_pages]
+
+defaults:
+  -
+    scope:
+      type: pages
+      path: _pages
+    values:
+      layout: default
 
 
 sass:

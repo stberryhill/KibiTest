@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/assets/styles/main.css">
+    <link rel="stylesheet" type="text/css" href="/KibiTest/assets/styles/main.css">
     <title>{{ page.title }} - {{ site.title }}</title>
 </head>
 <body>
   <div class="banner"><p>No linking necessary, simply include KibiTest.h</p></div>
   <nav class="nav-bar">
       <ul class="nav-links">
-          <li><a href="/" {% if page.title == "Home" %}class="active-page"{% endif %}>Home</a></li>
-          <li><a href="/about" {% if page.title == "About" %}class="active-page"{% endif %}>About</a></li>
-          <li><a href="/contact" {% if page.title == "Contact" %}class="active-page"{% endif %}>Contact</a></li>
+          <li><a href="/KibiTest/" {% if page.title == "Home" %}class="active-page"{% endif %}>Home</a></li>
+          <li><a href="/KibiTest/about" {% if page.title == "About" %}class="active-page"{% endif %}>About</a></li>
+          <li><a href="/KibiTest/contact" {% if page.title == "Contact" %}class="active-page"{% endif %}>Contact</a></li>
       </ul>
   </nav>
   <div class="logo">
-    <img src="/assets/graphics/logo.png">
+    <img src="/KibiTest/assets/graphics/logo.png">
     <p>A minimal, single-header C89 testing framework in under a Kibibyte.</p>
   </div>
   <div class="content-wrapper">
