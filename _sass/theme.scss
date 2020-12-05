@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1.2em;
+  font-family: Arial;
+  color: #2f2f2f;
+  background-color: #fafafa;
+}
+
+div {
+  background-color: #ffffff;
+}
+
+h1 {
+  color: #343447;
+}
+
+main {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3em;
+}
+
+.content-wrapper {
+  background-color: #ffffff;
+}
+
+footer {
+  font-size: 0.8em;
+  color: #aaaaaa;
+  text-align: center;
+}
