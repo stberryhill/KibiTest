@@ -2,7 +2,7 @@
 > A minimal, single-header C89 testing framework in under a Kibibyte.
 
 
-KibiTest is designed to be the bare essentials - a no-fuss testing solution that's self-explanatory. It was conceived as both a fun exercise in minimalism and as the testing solution for my upcoming terminal-manipulation library.
+KibiTest is designed to be the bare essentials - a no-fuss testing solution that's self-explanatory. It was conceived as both a fun exercise in minimalism and as the testing solution for my terminal-manipulation library.
 
 - [KibiTest](#kibitest)
   - [Summary](#summary)
