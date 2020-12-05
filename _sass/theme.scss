@@ -8,15 +8,24 @@ body {
   font-size: 1.2em;
   font-family: Arial;
   color: #2f2f2f;
-  background-color: #fafafa;
+  background-color: #f8f8f8;
 }
 
 div {
   background-color: #ffffff;
 }
 
-h1 {
+h1, h2, h3, h4 {
   color: #343447;
+  margin-bottom: 0.25em;
+}
+
+p, ul, ol {
+  margin-bottom: 0.9em;
+}
+
+ul {
+  margin-left: 1em;
 }
 
 main {
@@ -27,7 +36,7 @@ main {
 }
 
 .content-wrapper {
-  background-color: #ffffff;
+  background-color: #f8f8f8;
 }
 
 footer {
